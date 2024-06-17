@@ -1,0 +1,26 @@
+{{!-- {{> header}}
+<main>
+  <h1>Login Page</h1>
+  <form id="login-form">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Login</button>
+  </form>
+</main>
+<script type="module" src="./login.js"></script> --}}
+
+{{#> dialog }}
+  <form class="login-page">
+    <div class="login-page__content">
+      {{> pageTitle title="Вход" }}
+      {{> inputField className="login-page__input" title="Логин" name="login" type="text" }}
+      {{> inputField className="login-page__input" title="Пароль" name="password" type="password" }}
+    </div>
+    <div class="login-page__footer">
+      {{> button text="Авторизоваться" page="/pages/chat/chat" }}
+    </div>
+  </form>
+{{/ dialog }}
+
