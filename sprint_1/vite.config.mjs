@@ -23,9 +23,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'src/index.html'),
-        login: path.resolve(__dirname, 'src/pages/login/login.hbs'),
-        register: path.resolve(__dirname, 'src/pages/register/register.hbs'),
-        chat: path.resolve(__dirname, 'src/pages/chat/chat.hbs')
+        login: path.resolve(__dirname, 'src/pages/login-page/login-page.hbs'),
+        register: path.resolve(__dirname, 'src/pages/register-page/register-page.hbs'),
+        chat: path.resolve(__dirname, 'src/pages/chat-page/chat-page.hbs')
       }
     }
   }

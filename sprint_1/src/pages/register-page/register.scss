@@ -1,0 +1,73 @@
+// .register-page {
+//     width: 340px;
+//     height: 615px;
+//     display: flex;
+//     flex-direction: column;
+  
+//     &__content {
+//       flex: 1;
+//     }
+  
+//     &__input {
+//       margin-top: 16px;
+//     }
+//   }
+
+@import '../../assets/variables';
+
+.chat-page {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto;
+  background-color: grey;
+
+  &__sidebar {
+    border-right: 1px solid $divider-line-color;
+    overflow-y: auto;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__header {
+    padding: 1rem;
+    border-bottom: 1px solid $divider-line-color;
+    background-color: red;
+    color: white;
+  }
+
+  &__messages {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #fff;
+  }
+
+  &__footer {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid $divider-line-color;
+    background-color: red;
+
+    input {
+      flex-grow: 1;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: black;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}

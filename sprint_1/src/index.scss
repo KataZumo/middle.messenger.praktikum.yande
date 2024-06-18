@@ -1,28 +1,29 @@
 @import './assets/variables';
 
-body {
+html, body {
+  padding: 0;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: $background-color;
+  height: 100%;
 }
 
-header {
-  background-color: $header-background-color;
-  color: white;
-  padding: 1rem;
-}
-
-nav ul {
-  list-style: none;
+body {
+  font: $font-regular;
+  background-color: $text-bgcolor;
+  color: $text-color;
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
-nav ul li a {
-  color: white;
+a {
+  color: $link-color;
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-main {
-  padding: 1rem;
+button {
+  font-size: inherit;
+  line-height: inherit;
 }
