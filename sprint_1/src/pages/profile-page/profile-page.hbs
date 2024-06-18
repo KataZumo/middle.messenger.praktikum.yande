@@ -1,0 +1,39 @@
+ <div class="profile-container">
+        <div class="profile-header">
+            <img src="../assets/photo.png" alt="photo" class="profile-logo">
+        </div>
+        <div className="profile-info">
+            <h1>{{name}}</h1>
+            <p>Email: {{email}}</p>
+            <p>Login: {{login}}</p>
+            <p>First Name: {{firstName}}</p>
+            <p>Last Name: {{lastName}}</p>
+            <p>Chat Name: {{chatName}}</p>
+            <p>Phone: {{phone}}</p>
+        </div>
+        <div class="profile-actions">
+                {{> Link page="edit-profile" text="Изменить данные" className="profile-page__link"}}
+                {{> Link page="change-password" text="Изменить пароль" className="profile-page__link"}}
+                {{> Link page="logout" text="Выйти" className="profile-page__link profile-page__link--logout"}}
+        </div>
+    </div>
+
+    {{!-- <div class="profile-page">
+  <div class="profile-page__header">
+    <img src="../assets/photo.png" alt="Profile Photo" class="profile-page__photo">
+  </div>
+  <div class="profile-page__info">
+    <h1 class="profile-page__name">{{name}}</h1>
+    {{#each profile-info}}
+      <div class="profile-page__item">
+        <span class="profile-page__label">{{this.label}}:</span>
+        <span class="profile-page__value">{{this.value}}</span>
+      </div>
+    {{/each}}
+  </div>
+  <div class="profile-page__actions">
+    {{> Link page="edit-profile" text="Изменить данные" className="profile-page__link"}}
+    {{> Link page="change-password" text="Изменить пароль" className="profile-page__link"}}
+    {{> Link page="logout" text="Выйти" className="profile-page__link profile-page__link--logout"}}
+  </div>
+</div> --}}
