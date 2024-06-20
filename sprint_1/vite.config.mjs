@@ -3,6 +3,23 @@ import handlebars from 'vite-plugin-handlebars';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+
+// export default defineConfig({
+//   root: path.resolve(__dirname, 'src'),
+//   plugins: [handlebars({
+//     partialDirectory: path.resolve(__dirname, 'src/components'),
+//   })],
+//   css: {
+//     preprocessorOptions: {
+//       scss: {
+//         additionalData: `@import "src/assets/variables.scss";`
+//       }
+//     }
+//   },
+// });
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -11,6 +28,14 @@ export default defineConfig({
   plugins: [handlebars({
     partialDirectory: path.resolve(__dirname, 'src/components'),
   })],
+  build: {
+    outDir: path.resolve(__dirname, '../public'),
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'src/index.html')
+      }
+    }
+  },
   css: {
     preprocessorOptions: {
       scss: {
@@ -18,15 +43,8 @@ export default defineConfig({
       }
     }
   },
-  build: {
-    outDir: path.resolve(__dirname, 'public'),
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'src/index.html'),
-        login: path.resolve(__dirname, 'src/pages/login-page/login-page.hbs'),
-        register: path.resolve(__dirname, 'src/pages/register-page/register-page.hbs'),
-        chat: path.resolve(__dirname, 'src/pages/chat-page/chat-page.hbs')
-      }
-    }
+  server: {
+    middlewareMode: true
   }
 });
+

@@ -11,6 +11,7 @@ npm-debug.log*
 Thumbs.db
 
 # Vite build output
+node_modules/
 dist/
 public/
 

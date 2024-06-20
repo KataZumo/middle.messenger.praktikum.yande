@@ -3,6 +3,11 @@ import * as Components from './components';
 import * as Pages from './pages';
 import { initializeProfilePage, passwordData, profileData } from './pages/profile-page';
 
+
+Object.entries(Components).forEach(([ name, component ]) => {
+  Handlebars.registerPartial(name, component);
+  });
+
 const pages = {
   'chat': [ Pages.ChatPage ],
   'login': [ Pages.LoginPage ],
@@ -12,30 +17,34 @@ const pages = {
   'change-password': [ Pages.PasswordPage, passwordData ],
 };
 
-Object.entries(Components).forEach(([ name, component ]) => {
-  Handlebars.registerPartial(name, component);
-});
-
 function navigate(page) {
   const [ source, args ] = pages[page];
   const handlebarsFunct = Handlebars.compile(source);
   document.body.innerHTML = handlebarsFunct(args);
 
-    // Инициализация специфичных для страницы функций
     if (page === 'profile') {
       initializeProfilePage();
     }
 }
 
 
-document.addEventListener('DOMContentLoaded', () => navigate('login'));
+document.addEventListener('DOMContentLoaded', () => {
+  const path = window.location.pathname.substring(1) || 'login';
+  navigate(path);
+});
 
 document.addEventListener('click', e => {
   const page = e.target.getAttribute('page');
   if (page) {
+    history.pushState({}, '', `/${page}`);
     navigate(page);
 
     e.preventDefault();
     e.stopImmediatePropagation();
   }
+});
+
+window.addEventListener('popstate', () => {
+  const path = window.location.pathname.substring(1) || 'login';
+  navigate(path);
 });
