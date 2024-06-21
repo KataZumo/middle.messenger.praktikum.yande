@@ -29,35 +29,35 @@ async function createServer() {
   // Используем Vite как middleware
   app.use(vite.middlewares);
 
-  // Middleware для обслуживания статических файлов
-  app.use(express.static(path.join(__dirname, 'public')));
+  // Настройка статической папки  
+  app.use(express.static(path.join(__dirname, 'dist')));    
 
 
   // Маршруты для страниц
 
-  app.get('/', (req, res) => {
-    res.render('login-page/login-page', { error: null });
-  });
+  // app.get('/', (req, res) => {
+  //   res.render('login-page/login-page', { error: null });
+  // });
 
-  app.post('/register', (req, res) => {
-    res.render('register-page/register-page', { error: null });
-  });
+  // app.post('/register', (req, res) => {
+  //   res.render('register-page/register-page', { error: null });
+  // });
 
-  app.get('/chat', (req, res) => {
-    res.render('chat-page/chat-page');
-  });
+  // app.get('/chat', (req, res) => {
+  //   res.render('chat-page/chat-page');
+  // });
 
-  app.get('/profile', (req, res) => {
-    res.render('profile-page/profile-page')
-  });
+  // app.get('/profile', (req, res) => {
+  //   res.render('profile-page/profile-page')
+  // });
 
-  app.get('/edit-profile', (req, res) => {
-    res.render('edit-profile/edit-profile')
-  });
+  // app.get('/edit-profile', (req, res) => {
+  //   res.render('edit-profile/edit-profile')
+  // });
 
-  app.get('/change-password', (req, res) => {
-    res.render('change-password/change-password');
-  });
+  // app.get('/change-password', (req, res) => {
+  //   res.render('change-password/change-password');
+  // });
 
   // Запуск сервера
   app.listen(port, () => {
