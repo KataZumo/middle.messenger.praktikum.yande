@@ -30,7 +30,7 @@ async function createServer() {
   app.use(vite.middlewares);
 
   // Настройка статической папки  
-  app.use(express.static(path.join(__dirname, 'dist')));    
+  app.use(express.static(path.join(__dirname, '/src/dist')));    
 
 
   // Маршруты для страниц
