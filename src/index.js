@@ -15,6 +15,8 @@ const pages = {
   'profile': [ Pages.ProfilePage, profileData ],
   'change': [ Pages.ChangePage, profileData ],
   'change-password': [ Pages.PasswordPage, passwordData ],
+  'error-404' : [ Pages.Error404Page ],
+  'error-500' : [ Pages.Error500Page ]
 };
 
 function navigate(page) {

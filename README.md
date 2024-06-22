@@ -31,13 +31,14 @@
 
 ## Дизайн
 
-- [Главная страница] - https://disk.yandex.ru/i/pzYOBg_TS9B7Vw
-- [Страница регистрации] - https://disk.yandex.ru/i/mDme6uhNjE_m0A
-- [Страница чата] - https://disk.yandex.ru/i/Pis7-CTrwO6G4g
-- [Страница профилья] - https://disk.yandex.ru/i/unohca8Bim6pVw
-- [Страница редактирования профиля] - https://disk.yandex.ru/i/pJq8lbIOmLD_XA
-- [Страница изменения пароля] - https://disk.yandex.ru/i/MrGjC5RsjcA9xA
-
+- [Главная страница](https://disk.yandex.ru/i/pzYOBg_TS9B7Vw)
+- [Страница регистрации](https://disk.yandex.ru/i/mDme6uhNjE_m0A)
+- [Страница чата](https://disk.yandex.ru/i/Pis7-CTrwO6G4g)
+- [Страница профилья](https://disk.yandex.ru/i/unohca8Bim6pVw)
+- [Страница редактирования профиля](https://disk.yandex.ru/i/pJq8lbIOmLD_XA)
+- [Страница изменения пароля](https://disk.yandex.ru/i/MrGjC5RsjcA9xA)
+- [500 ошибка](https://disk.yandex.ru/i/vMZtUvj51EX0gg)
+- [404 ошибка](https://disk.yandex.ru/i/LpqLuthA-Ivzbw)
 
 
 
