@@ -6,10 +6,10 @@ export { default as ProfilePage } from './profile-page.hbs?raw';
 const profileData = {
     name: 'Гроги',
     email: 'test@example.com',
-    login: 'login',
-    firstName: 'Гроги',
-    lastName: 'Григорьевич',
-    chatName: 'login',
+    login_name: 'login',
+    first_name: 'Гроги',
+    second_name: 'Григорьевич',
+    chat_name: 'QWERTY',
     phone: '+1 234 567 890'
   };
   export { profileData };
