@@ -1,19 +1,41 @@
-.login-page {
-    width: 280px;
-    height: 390px;
-    display: flex;
-    flex-direction: column;
-  
-    &__content {
-      flex: 1;
-    }
-  
-    &__input {
-      margin-top: 16px;
-    }
-  }
+@import '../../assets/variables';
 
-  .link-content {
-    color: red;
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font: $font-regular;
+  background-color: $text-bgcolor;
+  color: $text-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
   }
-  
+}
+
+button {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+
