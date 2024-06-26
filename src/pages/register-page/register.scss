@@ -1,0 +1,78 @@
+@import '../../assets/variables';
+
+.chat-page {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto;
+  background-color: $background-color;
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid $divider-line-color;
+    overflow-y: auto;
+  }
+
+  &__sidebar-header {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__search-input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  &__list {
+    flex-grow: 1;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__header {
+    padding: 1rem;
+    border-bottom: 1px solid $divider-line-color;
+    background-color: $header-background-color;
+    color: white;
+  }
+
+  &__messages {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #fff;
+  }
+
+  &__footer {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid $divider-line-color;
+    background-color: $header-background-color;
+
+    input {
+      flex-grow: 1;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 40px;
+    }
+
+    button {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: $button-bgcolor;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
