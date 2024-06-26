@@ -1,6 +1,7 @@
 import Handlebars from 'handlebars';
 import './profile-page.scss';
 import { Modal } from '../../components/modal';
+import { AnyARecord } from 'dns';
 export { default as ProfilePage } from './profile-page.hbs?raw';
 
 const profileData = {
@@ -24,8 +25,8 @@ const profileData = {
 
 
   function initializeProfilePage() {
-    const profilePhoto = document.getElementById('profile-photo');
-    const modalContainer = document.getElementById('modal-container');
+    const profilePhoto = document.getElementById('profile-photo') as any;
+    const modalContainer = document.getElementById('modal-container') as any;
   
     profilePhoto.addEventListener('click', () => {
       const template = Handlebars.compile(Modal);

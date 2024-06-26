@@ -19,7 +19,7 @@ const pages = {
   'error-500' : [ Pages.Error500Page ]
 };
 
-function navigate(page) {
+function navigate(page: string) {
   const [ source, args ] = pages[page];
   const handlebarsFunct = Handlebars.compile(source);
   document.body.innerHTML = handlebarsFunct(args);
