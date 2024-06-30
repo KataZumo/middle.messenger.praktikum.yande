@@ -1,12 +1,31 @@
 @import '../../assets/variables';
 
-.input-field {
-  &__title {
-    font: $font-nano;
-    color: $text-light-color;
-  }
+// .input-field {
+//   &__title {
+//     font: $font-nano;
+//     color: $text-light-color;
+//   }
 
-  &__element {
-    border-bottom: 1px solid $link-color;
-  }
+//   &__element {
+//     border-bottom: 1px solid $link-color;
+//   }
+// }
+
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field__title {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.input-field__element {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
 }

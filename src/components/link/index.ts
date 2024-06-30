@@ -2,17 +2,22 @@
 // export { default as Link } from './link.hbs?raw';
 
 
-import './link.scss';
-import Link from './link.hbs?raw';
 import Block from '../../tools/Block';
 
+interface LinkProps {
+  text: string;
+  href: string;
+  className?: string;
+}
 
 export default class LinkComponent extends Block {
-    constructor(props: any) {
-        super(props);
-    }
+  constructor(props: LinkProps) {
+    super(props);
+  }
 
-    render() {
-        return `<a href="{{ url }}" class="link{{#if className}} {{className}}{{/if}}" page="{{ page }}">{{ text }}</a>`
-    }
+  render() {
+    return `
+      <a href="{{href}}" class="{{className}}">{{text}}</a>
+    `;
+  }
 }

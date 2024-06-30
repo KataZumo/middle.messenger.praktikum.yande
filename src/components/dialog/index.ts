@@ -5,15 +5,22 @@
 
 import Block from '../../tools/Block';
 import './dialog.scss';
-import Dialog from './dialog.hbs?raw';
-export default class DialogComponent extends Block {
-    constructor(props: any) {
-        super(props);
-    }
 
-    render() {
-        return `<div class="dialog">
-  {{> @partial-block }}
-</div>`
-    }
+interface DialogProps {
+  // add any necessary props
 }
+
+export default class Dialog extends Block {
+  constructor(props: DialogProps) {
+    super(props);
+  }
+
+  render() {
+    return `
+      <div class="dialog">
+        {{> @partial-block }}
+      </div>
+    `;
+  }
+}
+

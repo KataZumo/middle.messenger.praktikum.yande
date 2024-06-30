@@ -1,10 +1,14 @@
+import ChatPage from './pages/chat-page';
 import LoginPage from './pages/login-page';
+import RegisterPage from './pages/register-page';
 // import './styles.scss';
 
 type PageConstructor = new (props: any) => any;
 
 const pages: Record<string, PageConstructor> = {
   'login': LoginPage,
+  'register': RegisterPage,
+  'chat': ChatPage,
 };
 
 function navigate(page: string) {
@@ -15,7 +19,6 @@ function navigate(page: string) {
   }
   
   const pageInstance = new PageClass({});
-  // console.log("🚀 ~ navigate ~ pageInstance:", pageInstance)
   const container = document.getElementById('app')!;
   container.innerHTML = ''; 
   const content = pageInstance.getContent();

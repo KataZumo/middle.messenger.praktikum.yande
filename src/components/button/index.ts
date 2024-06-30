@@ -5,6 +5,10 @@ interface ButtonProps {
   text: string;
   type?: string;
   className?: string;
+  events?: {
+    click: (event: Event) => void;
+  },
+  href?: string;
 }
 
 export default class Button extends Block {

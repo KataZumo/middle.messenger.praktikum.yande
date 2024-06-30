@@ -1,78 +1,48 @@
-@import '../../assets/variables';
+.register-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
 
-.chat-page {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  grid-template-rows: auto;
-  background-color: $background-color;
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
-  &__sidebar {
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid $divider-line-color;
-    overflow-y: auto;
+.input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  &:focus {
+    border-color: #007BFF;
+    outline: none;
   }
+}
 
-  &__sidebar-header {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.register-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    background-color: #0056b3;
   }
+}
 
-  &__search-input {
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-
-  &__list {
-    flex-grow: 1;
-  }
-
-  &__main {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  &__header {
-    padding: 1rem;
-    border-bottom: 1px solid $divider-line-color;
-    background-color: $header-background-color;
-    color: white;
-  }
-
-  &__messages {
-    flex-grow: 1;
-    padding: 1rem;
-    overflow-y: auto;
-    background-color: #fff;
-  }
-
-  &__footer {
-    display: flex;
-    padding: 1rem;
-    border-top: 1px solid $divider-line-color;
-    background-color: $header-background-color;
-
-    input {
-      flex-grow: 1;
-      padding: 0.5rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      margin-bottom: 40px;
-    }
-
-    button {
-      margin-left: 1rem;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 5px;
-      background-color: $button-bgcolor;
-      color: white;
-      cursor: pointer;
-    }
+.register-link {
+  color: #007BFF;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
   }
 }
