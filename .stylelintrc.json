@@ -1,17 +1,16 @@
 {
-    "extends": [
-      "stylelint-config-standard-scss",
-      "stylelint-config-prettier-scss"
-    ],
-    "plugins": [
-      "stylelint-order"
-    ],
-    "rules": {
-      "order/order": [
-        "custom-properties",
-        "declarations"
-      ],
-      "order/properties-alphabetical-order": true
-    }
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "standard-with-typescript",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/space-before-function-paren": "off"
   }
+}
   

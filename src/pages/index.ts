@@ -1,8 +1,8 @@
-export { ChatPage } from './chat-page';
-export { LoginPage } from './login-page';
-export { RegisterPage } from './register-page';
-export { ProfilePage } from './profile-page'
-export { ChangePage } from './profile-page/chande-data-page'
-export { PasswordPage } from './profile-page/password-page'
-export { Error404Page } from './error-404'
-export { Error500Page } from './error-500'
+// export * from './chat-page';
+export { default as LoginPage } from './login-page';
+// export * from './register-page';
+// export * from './profile-page'
+// export * from './profile-page/chande-data-page'
+// export * from './profile-page/password-page'
+// export * from './error-404'
+// export * from './error-500'

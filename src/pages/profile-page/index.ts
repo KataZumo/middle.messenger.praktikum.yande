@@ -1,7 +1,6 @@
 import Handlebars from 'handlebars';
 import './profile-page.scss';
-import { Modal } from '../../components/modal';
-import { AnyARecord } from 'dns';
+import Modal  from '../../components/modal';
 export { default as ProfilePage } from './profile-page.hbs?raw';
 
 const profileData = {

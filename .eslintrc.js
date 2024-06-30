@@ -5,6 +5,7 @@ module.exports = {
       sourceType: 'module'
     },
     extends: [
+      'extend": airbnb',
       'eslint:recommended',
       'plugin:@typescript-eslint/recommended',
       'plugin:import/errors',
@@ -16,6 +17,8 @@ module.exports = {
       'plugin:prettier/recommended'
     ],
     rules: {
+      "max-len": [2, 100],
+      "max-params": [2, 3],
       'prettier/prettier': 'error',
       'import/order': [
         'error',
