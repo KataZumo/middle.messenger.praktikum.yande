@@ -26,6 +26,7 @@ interface ChatItemProps {
   avatar?: string;
   message: string;
   current?: boolean;
+  name?: string;
 }
 
 export default class ChatItem extends Block {
@@ -36,18 +37,19 @@ export default class ChatItem extends Block {
   render() {
     return `
       <div class="chat-item">
-        <div class="chat-item__line"></div>
-        <div class="chat-item__block{{#if current}} chat-item__block--current{{/if}}">
-          {{avatar}}
-          <div>
-            <img class="chat-item__avatar" alt="User's Photos" src="{{ avatar }}">
-          </div>
+        <div class="chat-item__avatar">
+          {{#if avatar}}
+            <img src="{{avatar}}" alt="Avatar">
           {{else}}
-          <div class="chat-item__avatar"></div>
+            <div class="chat-item__avatar-placeholder"></div>
           {{/if}}
-          <div class="chat-item__message">
-            <span class="chat-item__message-text">{{ message }}</span>
-          </div>
+        </div>
+        <div class="chat-item__details">
+          <div class="chat-item__name">{{name}}</div>
+          <div class="chat-item__message">{{message}}</div>
+          {{#if unread}}
+            <div class="chat-item__unread">{{unread}}</div>
+          {{/if}}
         </div>
       </div>
     `;

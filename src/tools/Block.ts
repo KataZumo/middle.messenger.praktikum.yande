@@ -2,6 +2,15 @@
 import EventBus from "./EventBus";
 import Handlebars from "handlebars";
 
+
+export interface IProps {
+  __id?: string;
+
+  events?: { [key: string]: (e: Event) => void };
+  lists?: Block[];
+  [key: string]: any;
+}
+
 export default class Block {
   static EVENTS = {
     INIT: "init",
@@ -12,6 +21,8 @@ export default class Block {
 
   _element = null;
   _id = Math.floor(100000 + Math.random() * 900000);
+  props: IProps;
+  children: IProps;
 
   constructor(propsWithChildren = {}) {
     const eventBus = new EventBus();

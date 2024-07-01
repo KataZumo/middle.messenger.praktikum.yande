@@ -14,29 +14,56 @@
 
 import Block from '../../tools/Block';
 import ChatList from '../../components/chat-list';
+import ChatItem from '../../components/chat-item';
+import Link from '../../components/link';
 import './chat-page.scss';
 
 interface ChatPageProps {
-  chats: Array<{ name: string, message: string, unread: number, avatar?: string }>;
+  currentChatName?: string;
+  chats?: Array<{ name: string, message: string, unread?: number, avatar?: string }>;
 }
 
 export default class ChatPage extends Block {
   constructor(props: ChatPageProps) {
+    const chatItems = props.chats?.map(chat => new ChatItem(chat)) || [];
     super({
       ...props,
+      profileLink: new Link({
+        text: 'Профиль',
+        href: '/profile',
+        className: 'chat-page__profile-link'
+      }),
       chatList: new ChatList({
         className: 'chat-page__list',
-        chats: props.chats,
-      }),
+        chats: props
+      })
     });
   }
 
   render() {
     return `
       <div class="chat-page">
-        {{{chatList}}}
+        <div class="chat-page__sidebar">
+          <div class="chat-page__sidebar-header">
+            {{{profileLink}}}
+            <input type="text" placeholder="Поиск" class="chat-page__search-input"/>
+          </div>
+          {{{chatList}}}
+        </div>
+        <div class="chat-page__main">
+          <div class="chat-page__header">
+            <h2>Чат с {{currentChatName}}</h2>
+          </div>
+          <div class="chat-page__messages" id="messages">
+          </div>
+          <div class="chat-page__footer">
+            <input type="text" id="message" placeholder="Введите сообщение..." />
+            <button id="send-button">Отправить</button>
+          </div>
+        </div>
       </div>
     `;
   }
 }
+
 
