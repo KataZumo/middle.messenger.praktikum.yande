@@ -27,9 +27,9 @@ export default class LoginPage extends Block {
         text: 'Авторизоваться',
         type: 'submit',
         className: 'login-button',
-        // events: {
-        //   click: this.handleLoginClick(this)
-        // },
+        events: {
+          click: (e: any) =>  this.handleLoginClick(e)
+        },
       }),
       registerLink: new Link({
         text: 'Регистрация',

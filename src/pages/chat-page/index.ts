@@ -17,6 +17,7 @@ import ChatList from '../../components/chat-list';
 import ChatItem from '../../components/chat-item';
 import Link from '../../components/link';
 import './chat-page.scss';
+import { mockChats } from './mockChats';
 
 interface ChatPageProps {
   currentChatName?: string;
@@ -25,20 +26,30 @@ interface ChatPageProps {
 
 export default class ChatPage extends Block {
   constructor(props: ChatPageProps) {
-    const chatItems = props.chats?.map(chat => new ChatItem(chat)) || [];
+    const chatList = new ChatList({ chats: mockChats });
     super({
       ...props,
+      currentChatName: 'Samanta Smith',
       profileLink: new Link({
         text: 'Профиль',
         href: '/profile',
         className: 'chat-page__profile-link'
       }),
       chatList: new ChatList({
-        className: 'chat-page__list',
-        chats: props
+        chats: mockChats
       })
+      // mockChats: [
+      //   new ChatItem ({ name: 'Samanta Smith', message: 'Алло, на!', unread: 3, avatar: 'https://example.com/avatar1.png' }),
+      //   new ChatItem ({ name: 'John Dow 1', message: 'What?', unread: 1, avatar: 'https://example.com/avatar2.png' }),
+      //   new ChatItem ({ name: 'John Dow 2', message: 'Hello there!', unread: 2, avatar: 'https://example.com/avatar3.png' }),
+      //   new ChatItem ({ name: 'John Dow 3', message: 'Good morning!', unread: 0, avatar: 'https://example.com/avatar4.png' }),
+      //   new ChatItem ({ name: 'John Dow 4', message: 'See you later!', unread: 5, avatar: 'https://example.com/avatar5.png' }),
+      //   new ChatItem ({ name: 'John Dow 5', message: 'Goodbye!', unread: 0, avatar: 'https://example.com/avatar6.png' }),
+      //   new ChatItem ({ name: 'John Dow 6', message: 'How are you?', unread: 4, avatar: 'https://example.com/avatar7.png' })
+      // ]
     });
   }
+
 
   render() {
     return `
@@ -67,3 +78,8 @@ export default class ChatPage extends Block {
 }
 
 
+
+      // chatList: new ChatList({
+      //   className: 'chat-page__list',
+      //   chats: props
+      // }),

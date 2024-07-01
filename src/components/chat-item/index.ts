@@ -27,6 +27,7 @@ interface ChatItemProps {
   message: string;
   current?: boolean;
   name?: string;
+  unread?: number;
 }
 
 export default class ChatItem extends Block {

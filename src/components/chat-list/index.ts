@@ -2,6 +2,7 @@
 // export { default as ChatList } from './chat-list.hbs?raw';
 
 import Block from '../../tools/Block';
+import ChatItem from '../chat-item';
 import './chat-list.scss';
 
 interface ChatListProps {
@@ -11,7 +12,12 @@ interface ChatListProps {
 
 export default class ChatList extends Block {
   constructor(props: ChatListProps) {
-    super(props);
+    const chatItems = props.chats.map(chat => new ChatItem(chat))
+    // console.log("🚀 ~ ChatList ~ constructor ~ chatItems:", chatItems)
+    super({
+      ...props,
+      chatItems
+    });
   }
 
   render() {
