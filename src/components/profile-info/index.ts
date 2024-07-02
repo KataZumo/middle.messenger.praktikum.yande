@@ -133,12 +133,11 @@ export default class ProfileInfoComponent extends Block {
 
   constructor(props: ProfilePageProps) {
     const modal = new ModalComponent({
-      onApply: () => console.log('File applied'), 
+      onApply: () => console.log('File applied'), // Замените на реальный обработчик
     });
 
     super({
       ...props,
-      modal,
       emailInfo: new Title({
         className: 'profile-info',
         text: 'Email',
@@ -163,6 +162,7 @@ export default class ProfileInfoComponent extends Block {
         className: 'profile-info',
         text: 'Phone',
       }),
+      profilePhoto: modal, // Добавляем модальное окно как профильное фото
       changeData: new Link({
         text: 'Изменить данные',
         href: '/change-data',
@@ -183,17 +183,24 @@ export default class ProfileInfoComponent extends Block {
     this.modal = modal;
     this.setProps({
       onPhotoClick: () => this.showModal(),
-      });
+      hideModal: () => this.hideModal(),
+    });
   }
 
   showModal() {
     this.modal.show();
   }
 
+  hideModal() {
+    this.modal.hide();
+  }
+
   override render() {
     return `<div class="profile-info">
-      {{{modal}}}
-      <img src="{{photoUrl}}" alt="Profile Photo" class="profile-info__photo" onclick="{{onPhotoClick}}" />
+      <div class="profile-info__photo-container" onclick="{{onPhotoClick}}">
+        <img src="{{photoUrl}}" alt="Profile Photo" class="profile-info__photo" />
+      </div>
+      {{{profilePhoto}}}
       <h1 class="profile-info__name">{{name}}</h1>
       <div class="profile-info__item">
         <span class="profile-info__label">Имейл:</span>
