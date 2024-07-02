@@ -26,18 +26,41 @@ interface ChatPageProps {
 
 export default class ChatPage extends Block {
   constructor(props: ChatPageProps) {
-    const chatList = new ChatList({ chats: mockChats });
+    // const chatList = new ChatList({ chats: mockChats });
     super({
       ...props,
-      currentChatName: 'Samanta Smith',
-      profileLink: new Link({
+        profileLink: new Link({
         text: 'Профиль',
         href: '/profile',
         className: 'chat-page__profile-link'
       }),
-      chatList: new ChatList({
-        chats: mockChats
-      })
+      lists: [
+        new ChatItem({name: 'Samanta Smith', message: 'Алло, на!',}),
+        new ChatItem({name: 'John Dow 1', message: 'What?',}),
+        new ChatItem({name: 'John Dow 2', message: 'What?',}),
+        new ChatItem({name: 'John Dow 3', message: 'What?',}),
+        new ChatItem({name: 'John Dow 4', message: 'What?',}),
+        new ChatItem({name: 'John Dow 5', message: 'What?',}),
+        new ChatItem({name: 'John Dow 6', message: 'What?',}),
+        new ChatItem({name: 'John Dow', message: 'What?',}),
+        new ChatItem({name: 'John Dow', message: 'What?',}),
+        new ChatItem({name: 'John Dow', message: 'What?',}),
+        new ChatItem({name: 'John Dow', message: 'What?',}),
+        new ChatItem({name: 'Samanta Smith', message: 'Алло, на!',}),
+        new ChatItem({name: 'John Dow 1', message: 'What?',}),
+        new ChatItem({name: 'John Dow 2', message: 'What?',}),
+        new ChatItem({name: 'John Dow 3', message: 'What?',}),
+        new ChatItem({name: 'John Dow 4', message: 'What?',}),
+        new ChatItem({name: 'John Dow 5', message: 'What?',}),
+        new ChatItem({name: 'John Dow 6', message: 'What?',}),
+        new ChatItem({name: 'John Dow', message: 'What?',}),
+        new ChatItem({name: 'John Dow', message: 'What?',}),
+        new ChatItem({name: 'John Dow', message: 'What?',}),
+        new ChatItem({name: 'John Dow', message: 'What?',}),
+  ],
+      // chatList: new ChatList({
+      //   chats: mockChats
+      // })
       // mockChats: [
       //   new ChatItem ({ name: 'Samanta Smith', message: 'Алло, на!', unread: 3, avatar: 'https://example.com/avatar1.png' }),
       //   new ChatItem ({ name: 'John Dow 1', message: 'What?', unread: 1, avatar: 'https://example.com/avatar2.png' }),
@@ -59,7 +82,7 @@ export default class ChatPage extends Block {
             {{{profileLink}}}
             <input type="text" placeholder="Поиск" class="chat-page__search-input"/>
           </div>
-          {{{chatList}}}
+          {{{lists}}}
         </div>
         <div class="chat-page__main">
           <div class="chat-page__header">

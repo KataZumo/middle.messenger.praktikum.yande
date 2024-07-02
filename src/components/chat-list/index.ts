@@ -24,7 +24,7 @@ export default class ChatList extends Block {
     return `
       <div class="chat-list{{#if className}} {{className}}{{/if}}">
         {{#each chats}}
-          {{{this}}}
+          {{{chatItems}}}
         {{/each}}
       </div>
     `;

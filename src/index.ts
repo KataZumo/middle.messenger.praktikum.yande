@@ -1,5 +1,7 @@
+import ProfileInfoComponent from './components/profile-info';
 import ChatPage from './pages/chat-page';
 import LoginPage from './pages/login-page';
+import ProfilePage from './pages/profile-page';
 import RegisterPage from './pages/register-page';
 
 type PageConstructor = new (props: any) => any;
@@ -8,6 +10,7 @@ const pages: Record<string, PageConstructor> = {
   'login': LoginPage,
   'register': RegisterPage,
   'chat': ChatPage,
+  'profile': ProfilePage,
 };
 
 function navigate(page: string) {

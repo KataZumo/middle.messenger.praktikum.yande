@@ -7,7 +7,6 @@ import Block from '../../tools/Block';
 import './dialog.scss';
 
 interface DialogProps {
-  // add any necessary props
 }
 
 export default class Dialog extends Block {

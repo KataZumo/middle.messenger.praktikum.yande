@@ -1,4 +1,10 @@
-@import '../../assets/variables.scss';
+// Определение цветов
+$button-bgcolor: #007bff; // Синий цвет для кнопок
+$header-background-color: #343a40; // Темно-серый цвет для хедера
+$link-color: #007bff; // Синий цвет для ссылок
+$button-color: white;
+
+// Ваши существующие стили
 
 .profile-page {
   display: flex;
@@ -79,5 +85,68 @@
         opacity: 0.9;
       }
     }
+  }
+}
+
+.modal {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  // z-index: 1000;
+
+  &__content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+  }
+
+  &__input {
+    display: none; 
+  }
+
+  &__apply-button {
+    padding: 0.5rem 1rem;
+    background-color: $button-bgcolor;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($button-bgcolor, 10%);
+    }
+  }
+
+  &__status-message {
+    margin-top: 1rem;
+    color: green;
+  }
+
+  &__close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
   }
 }
