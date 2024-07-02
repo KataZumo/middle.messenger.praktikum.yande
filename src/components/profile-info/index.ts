@@ -133,7 +133,7 @@ export default class ProfileInfoComponent extends Block {
 
   constructor(props: ProfilePageProps) {
     const modal = new ModalComponent({
-      onApply: () => console.log('File applied'), // Замените на реальный обработчик
+      onApply: () => console.log('File applied'), 
     });
 
     super({
