@@ -6,13 +6,65 @@
 import Block from '../../../tools/Block';
 import './password-page.scss';
 import PasswordPage from './password-page.hbs?raw';
+import Title from '../../../components/title/title';
+import { Button } from '../../../components';
 
-export default class PasswordPageData extends Block {
-    constructor(props: any) {
-        super(props);
+interface ChangePasswordPageProps {
+    oldPassword: string;
+    newPassword: string;
+    repeatPassword: string;
+  }
+  
+  export default class ChangePasswordPage extends Block {
+    constructor(props: ChangePasswordPageProps) {
+      super({
+        ...props,
+        oldPassword: new Title({
+          className: 'password-change',
+          text: 'Старый пароль',
+        }),
+        newPassword: new Title({
+          className: 'password-change',
+          text: 'Новый пароль',
+        }),
+        repeatPassword: new Title({
+          className: 'password-change',
+          text: 'Повторите пароль',
+        }),
+        saveButton: new Button({
+          text: 'Сохранить',
+          className: 'save-button',
+          events: {
+            click: (e: Event) => this.handleSaveClick(e),
+          },
+        }),
+      });
     }
-
-    render() {
-        return PasswordPage
+  
+    handleSaveClick(event: Event) {
+      event.preventDefault();
+      history.pushState({}, '', '/profile');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+      console.log('Пароль изменен');
     }
-}
+  
+    override render() {
+      return `<div class="change-password-page">
+        <div class="change-password-page__content">
+          <div class="change-password-page__item">
+            {{{oldPassword}}}
+            <input type="password" class="change-password-page__input" />
+          </div>
+          <div class="change-password-page__item">
+            {{{newPassword}}}
+            <input type="password" class="change-password-page__input" />
+          </div>
+          <div class="change-password-page__item">
+            {{{repeatPassword}}}
+            <input type="password" class="change-password-page__input" />
+          </div>
+          {{{saveButton}}}
+        </div>
+      </div>`;
+    }
+  }

@@ -8,15 +8,16 @@ interface ProfilePhotoProps {
   export default class ProfilePhotoComponent extends Block {
     constructor(props: ProfilePhotoProps) {
       super({
-        ...props
-    
+        ...props,
+        events: {
+          click: props.onClick
+        }
     });
     }
   
     override render() {
       return `<div class="profile-photo">
         <img src="{{photoUrl}}" alt="Profile Photo" class="profile-photo__image" />
-        <button class="profile-photo__button" type="button" onclick="{{onClick}}">Change Photo</button>
       </div>`;
     }
   }

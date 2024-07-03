@@ -1,7 +1,8 @@
-import ProfileInfoComponent from './components/profile-info';
 import ChatPage from './pages/chat-page';
 import LoginPage from './pages/login-page';
 import ProfilePage from './pages/profile-page';
+import ChangeDataPage from './pages/profile-page/chande-data-page';
+import ChangePasswordPage from './pages/profile-page/password-page';
 import RegisterPage from './pages/register-page';
 
 type PageConstructor = new (props: any) => any;
@@ -11,6 +12,8 @@ const pages: Record<string, PageConstructor> = {
   'register': RegisterPage,
   'chat': ChatPage,
   'profile': ProfilePage,
+  'change-data': ChangeDataPage,
+  'change-password': ChangePasswordPage,
 };
 
 function navigate(page: string) {

@@ -2,13 +2,12 @@
 // export { default as ProfileInfo } from './profile-info.hbs?raw';
 
 import Block from '../../tools/Block';
-import './profile-info.scss';
+// import './profile-info.scss';
 import Title from '../title/title';
 import { Link } from '..';
 import ModalComponent from '../modal';
-import ProfilePhotoComponent from '../photo/ProfilePhotoComponent';
 
-interface ProfilePageProps {
+interface ProfileChangePageProps {
   name: string;
   email: string;
   loginName: string;
@@ -19,17 +18,12 @@ interface ProfilePageProps {
   photoUrl: string;
 }
 
-export default class ProfileInfoComponent extends Block {
+export default class ProfileInfoChangeComponent extends Block {
   modal: ModalComponent;
 
-  constructor(props: ProfilePageProps) {
+  constructor(props: ProfileChangePageProps) {
     const modal = new ModalComponent({
-      onApply: () => console.log('File applied'),
-    });
-
-    const profilePhoto = new ProfilePhotoComponent({
-      photoUrl: props.photoUrl,
-      onClick: () => modal.show(),
+      onApply: () => console.log('File applied'), 
     });
 
     super({
@@ -58,32 +52,31 @@ export default class ProfileInfoComponent extends Block {
         className: 'profile-info',
         text: 'Phone',
       }),
-      profilePhoto,
-      changeData: new Link({
-        text: 'Изменить данные',
-        href: '/change-data',
-        className: 'chat-page__profile-link',
-      }),
-      changePassword: new Link({
-        text: 'Изменить пароль',
-        href: '/change-password',
-        className: 'chat-page__profile-link',
-      }),
-      exitLink: new Link({
-        text: 'Выйти',
-        href: '/login',
-        className: 'chat-page__profile-link',
-      }),
+      profilePhoto: modal,
     });
-      console.log("🚀 ~ ProfileInfoComponent ~ constructor ~ profilePhoto:", profilePhoto)
 
     this.modal = modal;
+
+    this.setProps({
+      onPhotoClick: this.showModal(),
+      hideModal:this.hideModal(),
+    });
+  }
+
+  showModal() {
+    this.modal.show();
+  }
+
+  hideModal() {
+    this.modal.hide();
   }
 
   override render() {
     return `<div class="profile-info">
+      <div class="profile-info__photo-container" onclick="{{onPhotoClick}}">
+        <img src="{{photoUrl}}" alt="Profile Photo" class="profile-info__photo" />
+      </div>
       {{{profilePhoto}}}
-      {{{modal}}}
       <h1 class="profile-info__name">{{name}}</h1>
       <div class="profile-info__item">
         <span class="profile-info__label">Имейл:</span>
@@ -115,9 +108,6 @@ export default class ProfileInfoComponent extends Block {
         {{{phone}}}
         <span class="profile-info__value">{{phone}}</span>
       </div>
-      {{{changeData}}}
-      {{{changePassword}}}
-      {{{exitLink}}}
     </div>`;
   }
 }
