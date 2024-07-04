@@ -188,10 +188,10 @@ export default class Block {
   }
 
   show() {
-    this.getContent().style.display = "block";
+    this.getContent(this.element as HTMLElement).style.display = "block";
   }
 
   hide() {
-    this.getContent().style.display = "none";
+    this.getContent(this.element as HTMLElement).style.display = "none";
   }
 }

@@ -3,12 +3,16 @@ import Button from '../../components/button';
 import InputComponent from '../../components/input';
 import Link from '../../components/link';
 import './login-page.scss';
+import Title from '../../components/title/title';
 
 
 export default class LoginPage extends Block {
   constructor(props: any = {}) {
-    super({    
+    super({
       ...props,
+      title: new Title({
+        text: 'Вход'
+      }),
       usernameInput: new InputComponent({
         type: 'text',
         className: 'input',
@@ -32,7 +36,7 @@ export default class LoginPage extends Block {
         },
       }),
       registerLink: new Link({
-        text: 'Регистрация',
+        text: 'Нет аккаунта?',
         className: 'register-link',
         href: '/register',
       }),
@@ -45,15 +49,19 @@ export default class LoginPage extends Block {
     window.dispatchEvent(new PopStateEvent('popstate'));
   }
 
-
   render() {
     return `
       <div class="login-page">
+        {{{title}}}
         <form class="login-form">
-          {{{usernameInput}}}
-          {{{passwordInput}}}
-          {{{submitButton}}}
-          {{{registerLink}}}
+          <div class="login_input">
+            {{{usernameInput}}}
+            {{{passwordInput}}}
+          </div>
+          <div class="login-form-bottom">
+            {{{submitButton}}}
+            {{{registerLink}}}
+          </div>
         </form>
       </div>
     `;

@@ -3,11 +3,15 @@ import Button from '../../components/button';
 import InputComponent from '../../components/input';
 import Link from '../../components/link';
 import './register.scss';
+import Title from '../../components/title/title';
 
 export default class RegisterPage extends Block {
   constructor(props: any = {}) {
     super({
       ...props,
+      title: new Title({
+        text: 'Регистрация'
+      }),
       emailInput: new InputComponent({
         type: 'text',
         className: 'input',
@@ -66,6 +70,7 @@ export default class RegisterPage extends Block {
   render() {
     return `
       <div class="register-page">
+        {{{title}}}
         <form class="register-form">
           {{{emailInput}}}
           {{{loginInput}}}
@@ -73,8 +78,10 @@ export default class RegisterPage extends Block {
           {{{secondNameInput}}}
           {{{passwordInput}}}
           {{{passwordRepeatInput}}}
-          {{{submitButton}}}
-          {{{loginLink}}}
+          <div class="register-form-bottom">
+            {{{submitButton}}}
+            {{{loginLink}}}
+          </div>
         </form>
       </div>
     `;

@@ -16,7 +16,7 @@ interface ProfilePhotoProps {
     }
   
     override render() {
-      return `<div class="profile-photo">
+      return `<div class="profile-photo" style = "width: 100px, height: 100px, color: gray">
         <img src="{{photoUrl}}" alt="Profile Photo" class="profile-photo__image" />
       </div>`;
     }

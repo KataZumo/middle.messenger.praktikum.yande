@@ -32,7 +32,9 @@ interface ChatItemProps {
 
 export default class ChatItem extends Block {
   constructor(props: ChatItemProps) {
-    super(props);
+    super({
+      ...props
+    });
   }
 
   render() {
