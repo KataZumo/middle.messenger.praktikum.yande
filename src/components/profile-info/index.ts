@@ -33,13 +33,7 @@ export default class ProfileInfoComponent extends Block {
     super({
       ...props,
       modal: modal,
-      // modal: new ModalComponent({
-      //   onApply: () => console.log('File applied'),
-      // }),
-      // profilePhoto: new ProfilePhotoComponent({
-      //   photoUrl: props.photoUrl,
-      //   onClick: () => this.modal.show(),
-      // }),
+      profilePhoto,
       emailInfo: new Title({
         className: 'profile-info',
         text: 'Email',
@@ -64,7 +58,6 @@ export default class ProfileInfoComponent extends Block {
         className: 'profile-info',
         text: 'Phone',
       }),
-      profilePhoto,
       changeData: new Link({
         text: 'Изменить данные',
         href: '/change-data',
@@ -81,15 +74,12 @@ export default class ProfileInfoComponent extends Block {
         className: 'chat-page__profile-link',
       }),
     });
-      // console.log("🚀 ~ ProfileInfoComponent ~ constructor ~ profilePhoto:", profilePhoto)
-
     this.modal = modal;
   }
 
   override render() {
     return `<div class="profile-info">
       {{{profilePhoto}}}
-
       <h1 class="profile-info__name">{{name}}</h1>
       <div class="profile-info__item">
         <span class="profile-info__label">Имейл:</span>

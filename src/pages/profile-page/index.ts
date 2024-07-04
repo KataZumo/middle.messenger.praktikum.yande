@@ -3,10 +3,6 @@
 // import Modal  from '../../components/modal';
 // export { default as ProfilePage } from './profile-page.hbs?raw';
 
-import ProfileInfoComponent from "../../components/profile-info";
-import Block from "../../tools/Block";
-import './profile-page.scss';
-
 // const profileData = {
 //     name: 'Гроги',
 //     email: 'test@example.com',
@@ -24,6 +20,10 @@ import './profile-page.scss';
 //     repitPassword: '*******',
 
 
+
+import ProfileInfoComponent from "../../components/profile-info";
+import Block from "../../tools/Block";
+import './profile-page.scss';
 export default class ProfilePage extends Block {
   constructor(props: any) {
     super({

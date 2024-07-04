@@ -13,7 +13,6 @@ interface ChatListProps {
 export default class ChatList extends Block {
   constructor(props: ChatListProps) {
     const chatItems = props.chats.map(chat => new ChatItem(chat))
-    // console.log("🚀 ~ ChatList ~ constructor ~ chatItems:", chatItems)
     super({
       ...props,
       chatItems

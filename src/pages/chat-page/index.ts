@@ -26,7 +26,6 @@ interface ChatPageProps {
 
 export default class ChatPage extends Block {
   constructor(props: ChatPageProps) {
-    // const chatList = new ChatList({ chats: mockChats });
     super({
       ...props,
         profileLink: new Link({
@@ -34,42 +33,58 @@ export default class ChatPage extends Block {
         href: '/profile',
         className: 'chat-page__profile-link'
       }),
-      lists: [
-        new ChatItem({name: 'Samanta Smith', message: 'Алло, на!',}),
-        new ChatItem({name: 'John Dow 1', message: 'What?',}),
-        new ChatItem({name: 'John Dow 2', message: 'What?',}),
-        new ChatItem({name: 'John Dow 3', message: 'What?',}),
-        new ChatItem({name: 'John Dow 4', message: 'What?',}),
-        new ChatItem({name: 'John Dow 5', message: 'What?',}),
-        new ChatItem({name: 'John Dow 6', message: 'What?',}),
-        new ChatItem({name: 'John Dow', message: 'What?',}),
-        new ChatItem({name: 'John Dow', message: 'What?',}),
-        new ChatItem({name: 'John Dow', message: 'What?',}),
-        new ChatItem({name: 'John Dow', message: 'What?',}),
-        new ChatItem({name: 'Samanta Smith', message: 'Алло, на!',}),
-        new ChatItem({name: 'John Dow 1', message: 'What?',}),
-        new ChatItem({name: 'John Dow 2', message: 'What?',}),
-        new ChatItem({name: 'John Dow 3', message: 'What?',}),
-        new ChatItem({name: 'John Dow 4', message: 'What?',}),
-        new ChatItem({name: 'John Dow 5', message: 'What?',}),
-        new ChatItem({name: 'John Dow 6', message: 'What?',}),
-        new ChatItem({name: 'John Dow', message: 'What?',}),
-        new ChatItem({name: 'John Dow', message: 'What?',}),
-        new ChatItem({name: 'John Dow', message: 'What?',}),
-        new ChatItem({name: 'John Dow', message: 'What?',}),
-  ],
-      // chatList: new ChatList({
-      //   chats: mockChats
-      // })
-      // mockChats: [
-      //   new ChatItem ({ name: 'Samanta Smith', message: 'Алло, на!', unread: 3, avatar: 'https://example.com/avatar1.png' }),
-      //   new ChatItem ({ name: 'John Dow 1', message: 'What?', unread: 1, avatar: 'https://example.com/avatar2.png' }),
-      //   new ChatItem ({ name: 'John Dow 2', message: 'Hello there!', unread: 2, avatar: 'https://example.com/avatar3.png' }),
-      //   new ChatItem ({ name: 'John Dow 3', message: 'Good morning!', unread: 0, avatar: 'https://example.com/avatar4.png' }),
-      //   new ChatItem ({ name: 'John Dow 4', message: 'See you later!', unread: 5, avatar: 'https://example.com/avatar5.png' }),
-      //   new ChatItem ({ name: 'John Dow 5', message: 'Goodbye!', unread: 0, avatar: 'https://example.com/avatar6.png' }),
-      //   new ChatItem ({ name: 'John Dow 6', message: 'How are you?', unread: 4, avatar: 'https://example.com/avatar7.png' })
-      // ]
+
+      chat: new ChatItem({
+        name: 'Вейдер',
+        message: 'Скоро прикоюху сделаю',
+        avatar: "https://t4.ftcdn.net/jpg/03/13/36/79/360_F_313367965_7B8Y7JrJ3JAG6zdjw51L59kVQZMlA9K7.jpg"
+      }),
+      chat1: new ChatItem({
+        name: 'Люк',
+        message: 'я твой отец',
+      }),
+      chat2: new ChatItem({
+        name: 'Брат',
+        message: 'го тусить',
+        avatar: "https://thediffpodcast.com/assets/images/jordan-2c43ff762e625d49ea58424e3e74188a.jpg"
+      }),
+      chat3: new ChatItem({
+        name: 'Икогнито',
+        message: 'кредит не нужен?',
+      }),
+      chat4: new ChatItem({
+        name: 'Хомяк',
+        message: 'потыкай еще',
+      }),
+      chat5: new ChatItem({
+        name: 'Хомяк',
+        message: 'потыкай еще',
+      })
+
+  //     lists: [
+  //       new ChatItem({name: 'Samanta Smith', message: 'Алло, на!',}),
+  //       new ChatItem({name: 'John Dow 1', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow 2', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow 3', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow 4', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow 5', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow 6', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow', message: 'What?',}),
+  //       new ChatItem({name: 'Samanta Smith', message: 'Алло, на!',}),
+  //       new ChatItem({name: 'John Dow 1', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow 2', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow 3', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow 4', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow 5', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow 6', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow', message: 'What?',}),
+  //       new ChatItem({name: 'John Dow', message: 'What?',}),
+  // ],
     });
   }
 
@@ -82,7 +97,14 @@ export default class ChatPage extends Block {
             {{{profileLink}}}
             <input type="text" placeholder="Поиск" class="chat-page__search-input"/>
           </div>
-          {{{lists}}}
+          <div class="chat-page__chats">
+            {{{chat}}}
+            {{{chat1}}}
+            {{{chat2}}}
+            {{{chat3}}}
+            {{{chat4}}}
+            {{{chat5}}}
+          </div>
         </div>
         <div class="chat-page__main">
           <div class="chat-page__header">
@@ -99,10 +121,3 @@ export default class ChatPage extends Block {
     `;
   }
 }
-
-
-
-      // chatList: new ChatList({
-      //   className: 'chat-page__list',
-      //   chats: props
-      // }),

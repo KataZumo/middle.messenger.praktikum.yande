@@ -1,24 +1,3 @@
-// import './chat-item.scss';
-// export { default as ChatItem } from './chat-item.hbs?raw';
-
-// import Block from "../../tools/Block";
-// import "./chat-item.scss";
-
-// export default class ChatItemComponent extends Block {
-//   constructor(props: any) {
-//     super({...props});
-//   }
-
-// render() {
-//   return `
-//   <div>
-//     <div>{{ name }}</div>
-//     <div>{{ message }}</div>
-//   </div>`;
-// }
-// }
-
-
 import Block from '../../tools/Block';
 import './chat-item.scss';
 
@@ -39,7 +18,7 @@ export default class ChatItem extends Block {
 
   render() {
     return `
-      <div class="chat-item">
+      <div class="chat-item{{#if current}} chat-item--current{{/if}}">
         <div class="chat-item__avatar">
           {{#if avatar}}
             <img src="{{avatar}}" alt="Avatar">
@@ -50,10 +29,10 @@ export default class ChatItem extends Block {
         <div class="chat-item__details">
           <div class="chat-item__name">{{name}}</div>
           <div class="chat-item__message">{{message}}</div>
-          {{#if unread}}
-            <div class="chat-item__unread">{{unread}}</div>
-          {{/if}}
         </div>
+        {{#if unread}}
+          <div class="chat-item__unread">{{unread}}</div>
+        {{/if}}
       </div>
     `;
   }

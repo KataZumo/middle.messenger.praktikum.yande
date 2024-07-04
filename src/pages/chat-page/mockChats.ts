@@ -49,4 +49,5 @@ export const mockChats = [
 
 // Создание экземпляра ChatList с моковыми данными
 export const chatList = new ChatList({ chats: mockChats });
+console.log("🚀 ~ chatList:", chatList)
 // document.body.appendChild(chatList.getContent());
