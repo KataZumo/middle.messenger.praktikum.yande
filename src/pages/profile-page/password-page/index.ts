@@ -8,6 +8,7 @@ import './password-page.scss';
 import PasswordPage from './password-page.hbs?raw';
 import Title from '../../../components/title/title';
 import { Button } from '../../../components';
+import ProfilePhotoComponent from '../../../components/photo/ProfilePhotoComponent';
 
 interface ChangePasswordPageProps {
     oldPassword: string;
@@ -17,8 +18,13 @@ interface ChangePasswordPageProps {
   
   export default class ChangePasswordPage extends Block {
     constructor(props: ChangePasswordPageProps) {
+      const profilePhoto = new ProfilePhotoComponent({
+        avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5y_CQNi9oiqn96_0204tGgLQuUxigGKLe1w&s',
+        onClick: () => '',
+      });
       super({
         ...props,
+        profilePhoto,
         oldPassword: new Title({
           className: 'password-change',
           text: 'Старый пароль',
@@ -50,7 +56,8 @@ interface ChangePasswordPageProps {
   
     override render() {
       return `<div class="change-password-page">
-        <div class="change-password-page__content">
+      <div class="change-password-page__content">
+      {{{profilePhoto}}}
           <div class="change-password-page__item">
             {{{oldPassword}}}
             <input type="password" class="change-password-page__input" />

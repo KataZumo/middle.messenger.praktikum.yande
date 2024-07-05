@@ -2,10 +2,10 @@
 // export { default as ProfileInfo } from './profile-info.hbs?raw';
 
 import Block from '../../tools/Block';
-// import './profile-info.scss';
 import Title from '../title/title';
 import { Link } from '..';
 import ModalComponent from '../modal';
+import ProfilePhotoComponent from '../photo/ProfilePhotoComponent';
 
 interface ProfileChangePageProps {
   name: string;
@@ -24,10 +24,17 @@ export default class ProfileInfoChangeComponent extends Block {
   constructor(props: ProfileChangePageProps) {
     const modal = new ModalComponent({
       onApply: () => console.log('File applied'), 
+      
+    });
+    const profilePhoto = new ProfilePhotoComponent({
+      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5y_CQNi9oiqn96_0204tGgLQuUxigGKLe1w&s',
+      onClick: () => modal.show(),
     });
 
     super({
       ...props,
+      modal: modal,
+      profilePhoto,
       emailInfo: new Title({
         className: 'profile-info',
         text: 'Email',
@@ -52,29 +59,14 @@ export default class ProfileInfoChangeComponent extends Block {
         className: 'profile-info',
         text: 'Phone',
       }),
-      profilePhoto: modal,
     });
 
     this.modal = modal;
-
-    this.setProps({
-      onPhotoClick: this.showModal(),
-      hideModal:this.hideModal(),
-    });
-  }
-
-  showModal() {
-    this.modal.show();
-  }
-
-  hideModal() {
-    this.modal.hide();
   }
 
   override render() {
     return `<div class="profile-info">
       <div class="profile-info__photo-container" onclick="{{onPhotoClick}}">
-        <img src="{{photoUrl}}" alt="Profile Photo" class="profile-info__photo" />
       </div>
       {{{profilePhoto}}}
       <h1 class="profile-info__name">{{name}}</h1>
@@ -108,6 +100,7 @@ export default class ProfileInfoChangeComponent extends Block {
         {{{phone}}}
         <span class="profile-info__value">{{phone}}</span>
       </div>
+       {{{modal}}}
     </div>`;
   }
 }
