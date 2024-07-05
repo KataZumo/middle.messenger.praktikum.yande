@@ -1,8 +1,8 @@
 import Block from "../../tools/Block";
 
 interface ProfilePhotoProps {
-    photoUrl: string;
     onClick: () => void;
+    avatar: string;
   }
   
   export default class ProfilePhotoComponent extends Block {
@@ -16,9 +16,8 @@ interface ProfilePhotoProps {
     }
   
     override render() {
-      return `<div class="profile-photo" style = "width: 100px, height: 100px, color: gray">
-        <img src="{{photoUrl}}" alt="Profile Photo" class="profile-photo__image" />
+      return `<div class="profile-photo">
+        <img src="{{avatar}}" alt="Profile Photo" class="profile-photo__image" />
       </div>`;
     }
   }
-  
