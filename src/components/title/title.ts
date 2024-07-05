@@ -8,6 +8,6 @@ export default class Title extends Block {
         });
     }
     render() {
-        return `<span class="subtitle {{className}}">{{text}}</span>`;
+        return `<span class="subtitle">{{text}}</span>`;
     }
 }

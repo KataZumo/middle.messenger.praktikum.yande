@@ -77,44 +77,50 @@ export default class ProfileInfoComponent extends Block {
     this.modal = modal;
   }
 
+
   override render() {
-    return `<div class="profile-info">
-      {{{profilePhoto}}}
-      <h1 class="profile-info__name">{{name}}</h1>
-      <div class="profile-info__item">
-        <span class="profile-info__label">Имейл:</span>
-        {{{emailInfo}}}
-        <span class="profile-info__value">{{email}}</span>
+    return `<div class="profile-page">
+      {{{backLink}}}
+      <div class="profile-main-info">
+        {{{profilePhoto}}}
+        <h1 class="profile-main-info__name">{{name}}</h1>
+        <div class="profile-main-info__item">
+          <span class="profile-main-info__label">Имейл:</span>
+          {{{emailInfo}}}
+          <span class="profile-main-info__value">{{email}}</span>
+        </div>
+        <div class="profile-main-info__item">
+          <span class="profile-main-info__label">Логин:</span>
+          {{{login}}}
+          <span class="profile-main-info__value">{{loginName}}</span>
+        </div>
+        <div class="profile-main-info__item">
+          <span class="profile-main-info__label">Имя:</span>
+          {{{firstName}}}
+          <span class="profile-main-info__value">{{firstName}}</span>
+        </div>
+        <div class="profile-main-info__item">
+          <span class="profile-main-info__label">Фамилия:</span>
+          {{{secondName}}}
+          <span class="profile-main-info__value">{{secondName}}</span>
+        </div>
+        <div class="profile-main-info__item">
+          <span class="profile-main-info__label">Имя в чате:</span>
+          {{{chatName}}}
+          <span class="profile-main-info__value">{{chatName}}</span>
+        </div>
+        <div class="profile-main-info__item">
+          <span class="profile-main-info__label">Номер телефона:</span>
+          {{{phone}}}
+          <span class="profile-main-info__value">{{phone}}</span>
+        </div>
+        <div class="profile-main-info__link-container">
+          {{{changeData}}}
+          {{{changePassword}}}
+          {{{exitLink}}}
+        </div>
+        {{{modal}}}
       </div>
-      <div class="profile-info__item">
-        <span class="profile-info__label">Логин:</span>
-        {{{login}}}
-        <span class="profile-info__value">{{loginName}}</span>
-      </div>
-      <div class="profile-info__item">
-        <span class="profile-info__label">Имя:</span>
-        {{{firstName}}}
-        <span class="profile-info__value">{{firstName}}</span>
-      </div>
-      <div class="profile-info__item">
-        <span class="profile-info__label">Фамилия:</span>
-        {{{secondName}}}
-        <span class="profile-info__value">{{secondName}}</span>
-      </div>
-      <div class="profile-info__item">
-        <span class="profile-info__label">Имя в чате:</span>
-        {{{chatName}}}
-        <span class="profile-info__value">{{chatName}}</span>
-      </div>
-      <div class="profile-info__item">
-        <span class="profile-info__label">Номер телефона:</span>
-        {{{phone}}}
-        <span class="profile-info__value">{{phone}}</span>
-      </div>
-      {{{changeData}}}
-      {{{changePassword}}}
-      {{{exitLink}}}
-            {{{modal}}}
     </div>`;
   }
 }
