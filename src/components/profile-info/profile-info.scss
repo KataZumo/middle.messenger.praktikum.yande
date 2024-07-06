@@ -1,105 +1,68 @@
-$button-bgcolor: #007bff; 
-$header-background-color: #343a40; 
+$button-bgcolor: #007bff;
+$header-background-color: #343a40;
 $link-color: #007bff;
 $button-color: white;
 
-.profile-main-info {
+.profile-page {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
 
-  &__photo-container {
-    cursor: pointer;
-    margin-bottom: 1rem;
-  }
-
-  &__photo {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-  }
-
-  &__name {
-    margin-bottom: 2rem;
-  }
-
-  &__item {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 1rem;
-    align-items: center;
-
-    &__label {
-      font-weight: bold;
-    }
-
-    &__value {
-      flex: 1;
-      text-align: right;
-    }
-  }
-
-  &__link-container {
+  &__content {
+    width: 600px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
-
-    &__link {
-      margin-bottom: 15px;
-      text-align: center;
-    }
-  }
-}
-
-.modal {
-  display: none; /* Скрыто по умолчанию */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-
-  &__content {
-    background: white;
+    justify-content: center;
+    background-color: white;
     padding: 2rem;
-    border-radius: 8px;
-    text-align: center;
-    position: relative;
+  }
+  
+  .profile-main-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  &__title {
+  .profile-main-info__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     margin-bottom: 1rem;
   }
 
-  &__label {
-    display: block;
+  .profile-main-info__label {
+    flex: 0 0 200px; /* Фиксированная ширина для метки */
+    margin-right: 1rem;
+  }
+
+  .profile-main-info__value {
+    flex: 1;
+    padding: 0.5rem;
+    border: none; /* Убираем рамку */
+    border-bottom: 1px solid #ccc; /* Добавляем линию снизу */
+    border-radius: 0; /* Убираем закругление */
+    box-sizing: border-box; /* Добавляем box-sizing для корректного расчета размеров */
+  }
+
+  .profile-main-info__name {
     margin-bottom: 1rem;
-    cursor: pointer;
-    color: #007bff;
-    text-decoration: underline;
   }
 
-  &__input {
-    display: none; 
+  .profile-main-info__link-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  &__apply-button {
-    padding: 0.5rem 1rem;
-    background-color: $button-bgcolor;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: darken($button-bgcolor, 10%);
-    }
+  .chat-page__profile-link {
+    margin: 0.5rem 0;
   }
 }
-
