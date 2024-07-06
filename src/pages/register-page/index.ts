@@ -13,14 +13,14 @@ export default class RegisterPage extends Block {
         text: "Регистрация",
       }),
       emailInput: new InputComponent({
-        type: "text",
+        type: "email",
         className: "input",
         onChange: (value: string) => {
           console.log("Email:", value);
         },
       }),
       loginInput: new InputComponent({
-        type: "text",
+        type: "login",
         className: "input",
         onChange: (value: string) => {
           console.log("Login:", value);

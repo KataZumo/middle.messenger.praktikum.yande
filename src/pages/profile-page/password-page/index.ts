@@ -1,8 +1,8 @@
 import Block from "../../../tools/Block";
 import "./password-page.scss";
-import Title from "../../../components/title/title";
 import { Button } from "../../../components";
 import ProfilePhotoComponent from "../../../components/photo/ProfilePhotoComponent";
+import InputComponent from "../../../components/input";
 
 interface ChangePasswordPageProps {
   oldPassword: string;
@@ -20,17 +20,32 @@ export default class ChangePasswordPage extends Block {
     super({
       ...props,
       profilePhoto,
-      oldPassword: new Title({
-        className: "password-change",
-        text: "Старый пароль",
+      oldPassword: new InputComponent({
+        type: "password",
+        className: "change-password-page__input",
+        value: "",
+        placeholder: "Введите старый пароль",
+        onChange: (value: string) => {
+          console.log("Old Password:", value);
+        },
       }),
-      newPassword: new Title({
-        className: "password-change",
-        text: "Новый пароль",
+      newPassword: new InputComponent({
+        type: "password",
+        className: "change-password-page__input",
+        value: "",
+        placeholder: "Новый пароль",
+        onChange: (value: string) => {
+          console.log("New Password:", value);
+        },
       }),
-      repeatPassword: new Title({
-        className: "password-change",
-        text: "Повторите пароль",
+      repeatPassword: new InputComponent({
+        type: "password",
+        className: "change-password-page__input",
+        value: "",
+        placeholder: "Повторите пароль",
+        onChange: (value: string) => {
+          console.log("Repeat Password:", value);
+        },
       }),
       saveButton: new Button({
         text: "Сохранить",
@@ -52,21 +67,23 @@ export default class ChangePasswordPage extends Block {
   override render() {
     return `<div class="change-password-page">
       <div class="change-password-page__content">
-      {{{profilePhoto}}}
+        {{{profilePhoto}}}
+        <div class="buttons-place">
           <div class="change-password-page__item">
+            <span class="change-password-page__label">Старый пароль</span>
             {{{oldPassword}}}
-            <input type="password" class="change-password-page__input" />
           </div>
           <div class="change-password-page__item">
+            <span class="change-password-page__label">Новый пароль</span>
             {{{newPassword}}}
-            <input type="password" class="change-password-page__input" />
           </div>
           <div class="change-password-page__item">
+            <span class="change-password-page__label">Повторите пароль</span>
             {{{repeatPassword}}}
-            <input type="password" class="change-password-page__input" />
           </div>
-          {{{saveButton}}}
         </div>
-      </div>`;
+        {{{saveButton}}}
+      </div>
+    </div>`;
   }
 }

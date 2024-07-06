@@ -5,26 +5,6 @@ import Link from "../../components/link";
 import "./login-page.scss";
 import Title from "../../components/title/title";
 
-
-export function validateLogin(str: string) {
-  return new RegExp(/^(?!\d+$)[a-zA-Z0-9_-]{3,20}$/).test(str);
-}
-
-export function validatePassword(str: string) {
-  return new RegExp(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,40}$/).test(str);
-}
-
-export function validateName(str: string) {
-  return new RegExp(/^[А-ЯA-Z][-а-яa-zА-ЯA-Z]*(?:[-а-яa-zА-ЯA-Z]+)*$/).test(str);
-}
-
-export function validateEmail(str: string) {
-  return new RegExp(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/).test(str);
-}
-
-export function validatePhone(str: string) {
-  return new RegExp(/^\+?\d{10,15}$/).test(str);
-}
 interface LoginPageProps {
   title?: Title;
   usernameInput?: InputComponent;
@@ -41,10 +21,10 @@ export default class LoginPage extends Block {
         text: "Вход",
       }),
       usernameInput: new InputComponent({
-        type: "text",
+        type: "email",
         className: "input",
         onChange: (value: string) => {
-          console.log("Username:", value);
+          console.log("Email:", value);
         },
       }),
       passwordInput: new InputComponent({
@@ -59,8 +39,11 @@ export default class LoginPage extends Block {
         type: "submit",
         className: "login-button",
         events: {
-          click: (e: unknown) => this.handleLoginClick(e),
-        },
+          click: (event: Event) => {
+            this.handleLoginClick(event);
+            event.preventDefault();
+            console.log("Клик");
+          }}
       }),
       registerLink: new Link({
         text: "Нет аккаунта?",
