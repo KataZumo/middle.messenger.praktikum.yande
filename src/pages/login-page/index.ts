@@ -1,52 +1,59 @@
-import Block from '../../tools/Block';
-import Button from '../../components/button';
-import InputComponent from '../../components/input';
-import Link from '../../components/link';
-import './login-page.scss';
-import Title from '../../components/title/title';
+import Block from "../../tools/Block";
+import Button from "../../components/button";
+import InputComponent from "../../components/input";
+import Link from "../../components/link";
+import "./login-page.scss";
+import Title from "../../components/title/title";
 
-
+interface LoginPageProps {
+  title?: Title;
+  usernameInput?: InputComponent;
+  passwordInput?: InputComponent;
+  submitButton?: Button;
+  registerLink?: Link;
+  [key: string]: unknown;
+}
 export default class LoginPage extends Block {
-  constructor(props: any = {}) {
+  constructor(props: LoginPageProps = {}) {
     super({
       ...props,
       title: new Title({
-        text: 'Вход'
+        text: "Вход",
       }),
       usernameInput: new InputComponent({
-        type: 'text',
-        className: 'input',
+        type: "text",
+        className: "input",
         onChange: (value: string) => {
-          console.log('Username:', value);
+          console.log("Username:", value);
         },
       }),
       passwordInput: new InputComponent({
-        type: 'password',
-        className: 'input',
+        type: "password",
+        className: "input",
         onChange: (value: string) => {
-          console.log('Password:', value);
+          console.log("Password:", value);
         },
       }),
       submitButton: new Button({
-        text: 'Авторизоваться',
-        type: 'submit',
-        className: 'login-button',
+        text: "Авторизоваться",
+        type: "submit",
+        className: "login-button",
         events: {
-          click: (e: any) =>  this.handleLoginClick(e)
+          click: (e: unknown) => this.handleLoginClick(e),
         },
       }),
       registerLink: new Link({
-        text: 'Нет аккаунта?',
-        className: 'register-link',
-        href: '/register',
+        text: "Нет аккаунта?",
+        className: "register-link",
+        href: "/register",
       }),
     });
   }
 
   handleLoginClick(event: Event) {
     event.preventDefault();
-    history.pushState({}, '', '/chat');
-    window.dispatchEvent(new PopStateEvent('popstate'));
+    history.pushState({}, "", "/chat");
+    window.dispatchEvent(new PopStateEvent("popstate"));
   }
 
   render() {

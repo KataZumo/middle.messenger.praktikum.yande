@@ -1,9 +1,8 @@
 // import './input-field.scss';
 // export { default as InputField } from './input-field.hbs?raw';
 
-
-import Block from '../../tools/Block';
-import './input-field.scss';
+import Block from "../../tools/Block";
+import "./input-field.scss";
 
 interface InputFieldProps {
   title: string;
@@ -26,4 +25,3 @@ export default class InputField extends Block {
     `;
   }
 }
-

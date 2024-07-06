@@ -1,68 +1,68 @@
-import Block from '../../tools/Block';
-import Button from '../../components/button';
-import InputComponent from '../../components/input';
-import Link from '../../components/link';
-import './register.scss';
-import Title from '../../components/title/title';
+import Block from "../../tools/Block";
+import Button from "../../components/button";
+import InputComponent from "../../components/input";
+import Link from "../../components/link";
+import "./register.scss";
+import Title from "../../components/title/title";
 
 export default class RegisterPage extends Block {
   constructor(props: any = {}) {
     super({
       ...props,
       title: new Title({
-        text: 'Регистрация'
+        text: "Регистрация",
       }),
       emailInput: new InputComponent({
-        type: 'text',
-        className: 'input',
+        type: "text",
+        className: "input",
         onChange: (value: string) => {
-          console.log('Email:', value);
+          console.log("Email:", value);
         },
       }),
       loginInput: new InputComponent({
-        type: 'text',
-        className: 'input',
+        type: "text",
+        className: "input",
         onChange: (value: string) => {
-          console.log('Login:', value);
+          console.log("Login:", value);
         },
       }),
       firstNameInput: new InputComponent({
-        type: 'text',
-        className: 'input',
+        type: "text",
+        className: "input",
         onChange: (value: string) => {
-          console.log('First Name:', value);
+          console.log("First Name:", value);
         },
       }),
       secondNameInput: new InputComponent({
-        type: 'text',
-        className: 'input',
+        type: "text",
+        className: "input",
         onChange: (value: string) => {
-          console.log('Second Name:', value);
+          console.log("Second Name:", value);
         },
       }),
       passwordInput: new InputComponent({
-        type: 'password',
-        className: 'input',
+        type: "password",
+        className: "input",
         onChange: (value: string) => {
-          console.log('Password:', value);
+          console.log("Password:", value);
         },
       }),
       passwordRepeatInput: new InputComponent({
-        type: 'password',
-        className: 'input',
+        type: "password",
+        className: "input",
         onChange: (value: string) => {
-          console.log('Password Repeat:', value);
+          console.log("Password Repeat:", value);
         },
       }),
       submitButton: new Button({
-        text: 'Зарегистрироваться',
-        type: 'submit',
-        className: 'register-button',
+        text: "Зарегистрироваться",
+        type: "submit",
+        className: "register-button",
       }),
       loginLink: new Link({
-        text: 'Войти',
-        className: 'register-link',
-        href: '/login',
+        text: "Войти",
+        className: "register-link",
+        href: "/login",
       }),
     });
   }
@@ -87,4 +87,3 @@ export default class RegisterPage extends Block {
     `;
   }
 }
-

@@ -1,18 +1,22 @@
 // import './password-info.scss';
 // export { default as PasswordInfo } from './password-info.hbs?raw';
 
-import Block from '../../tools/Block';
-import './password-info.scss';
-import PasswordInfo from './password-info.hbs?raw';
+import Block from "../../tools/Block";
+import "./password-info.scss";
 
+interface PasswordInfoProps {
+  oldPassword: string;
+  password: string;
+  repitPassword: string;
+}
 
 export default class PasswordInfoComponent extends Block {
-    constructor(props: any) {
-        super(props);
-    }
+  constructor(props: PasswordInfoProps) {
+    super(props);
+  }
 
-    render() {
-        return `<div class="profile-info">
+  render() {
+    return `<div class="profile-info">
   <div class="profile-info__item">
     <span class="profile-info__label">Старый пароль:</span>
     <span class="profile-info__value">{{oldPassword}}</span>
@@ -26,8 +30,6 @@ export default class PasswordInfoComponent extends Block {
     <span class="profile-info__value">{{repitPassword}}</span>
   </div>
 </div>
-
-
-`
-    }
+`;
+  }
 }

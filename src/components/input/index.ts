@@ -4,7 +4,6 @@
 import Block from "../../tools/Block";
 import "./input.scss";
 
-
 interface InputProps {
   type: string;
   className?: string;
@@ -20,7 +19,8 @@ export default class InputComponent extends Block {
     super({
       ...props,
       events: {
-        change: (e: Event) => props.onChange((e.target as HTMLInputElement).value),
+        change: (e: Event) =>
+          props.onChange((e.target as HTMLInputElement).value),
         blur: (e: Event) => this.validate(),
       },
     });
@@ -31,6 +31,6 @@ export default class InputComponent extends Block {
   }
 
   validate() {
-    console.log('Here we call validation code on blur');
+    console.log("Here we call validation code on blur");
   }
 }

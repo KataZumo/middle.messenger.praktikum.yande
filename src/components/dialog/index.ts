@@ -1,13 +1,10 @@
 // import './dialog.scss';
 // export { default as Dialog } from './dialog.hbs?raw';
 
+import Block from "../../tools/Block";
+import "./dialog.scss";
 
-
-import Block from '../../tools/Block';
-import './dialog.scss';
-
-interface DialogProps {
-}
+interface DialogProps {}
 
 export default class Dialog extends Block {
   constructor(props: DialogProps) {
@@ -22,4 +19,3 @@ export default class Dialog extends Block {
     `;
   }
 }
-

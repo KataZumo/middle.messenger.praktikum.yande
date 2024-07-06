@@ -1,31 +1,20 @@
-// import Handlebars from 'handlebars';
-// import './profile-page.scss';
-// import Modal  from '../../components/modal';
-// export { default as ProfilePage } from './profile-page.hbs?raw';
-
-// const profileData = {
-//     name: 'Гроги',
-//     email: 'test@example.com',
-//     login_name: 'login',
-//     first_name: 'Гроги',
-//     second_name: 'Григорьевич',
-//     chat_name: 'QWERTY',
-//     phone: '+1 234 567 890'
-//   };
-//   export { profileData };
-
-//   const passwordData = {
-//     oldPassword: '*******',
-//     password: '*******',
-//     repitPassword: '*******',
-
-
-
 import ProfileInfoComponent from "../../components/profile-info";
 import Block from "../../tools/Block";
-import './profile-page.scss';
+import "./profile-page.scss";
+
+interface ProfilePageProps {
+  name: string;
+  email: string;
+  loginName: string;
+  firstName: string;
+  secondName: string;
+  chatName: string;
+  phone: string;
+  photoUrl: string;
+  [key: string]: any;
+}
 export default class ProfilePage extends Block {
-  constructor(props: any) {
+  constructor(props: ProfilePageProps) {
     super({
       ...props,
       profile: new ProfileInfoComponent({
@@ -52,4 +41,3 @@ export default class ProfilePage extends Block {
     </div>`;
   }
 }
-

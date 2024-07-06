@@ -1,21 +1,26 @@
 // import './chat-list.scss';
 // export { default as ChatList } from './chat-list.hbs?raw';
 
-import Block from '../../tools/Block';
-import ChatItem from '../chat-item';
-import './chat-list.scss';
+import Block from "../../tools/Block";
+import ChatItem from "../chat-item";
+import "./chat-list.scss";
 
 interface ChatListProps {
   className?: string;
-  chats: Array<{ name: string, message: string, unread: number, avatar?: string }>;
+  chats: Array<{
+    name: string;
+    message: string;
+    unread: number;
+    avatar?: string;
+  }>;
 }
 
 export default class ChatList extends Block {
   constructor(props: ChatListProps) {
-    const chatItems = props.chats.map(chat => new ChatItem(chat))
+    const chatItems = props.chats.map((chat) => new ChatItem(chat));
     super({
       ...props,
-      chatItems
+      chatItems,
     });
   }
 
@@ -29,4 +34,3 @@ export default class ChatList extends Block {
     `;
   }
 }
-

@@ -1,5 +1,5 @@
-import Block from '../../tools/Block';
-import './button.scss';
+import Block from "../../tools/Block";
+import "./button.scss";
 
 interface ButtonProps {
   text: string;
@@ -7,7 +7,7 @@ interface ButtonProps {
   className?: string;
   events?: {
     click: (event: Event) => void;
-  },
+  };
   href?: string;
 }
 

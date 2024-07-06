@@ -1,8 +1,7 @@
 // import './link.scss';
 // export { default as Link } from './link.hbs?raw';
 
-
-import Block from '../../tools/Block';
+import Block from "../../tools/Block";
 
 interface LinkProps {
   text: string;

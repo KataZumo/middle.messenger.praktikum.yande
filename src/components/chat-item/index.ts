@@ -1,5 +1,5 @@
-import Block from '../../tools/Block';
-import './chat-item.scss';
+import Block from "../../tools/Block";
+import "./chat-item.scss";
 
 interface ChatItemProps {
   avatar?: string;
@@ -12,7 +12,7 @@ interface ChatItemProps {
 export default class ChatItem extends Block {
   constructor(props: ChatItemProps) {
     super({
-      ...props
+      ...props,
     });
   }
 
