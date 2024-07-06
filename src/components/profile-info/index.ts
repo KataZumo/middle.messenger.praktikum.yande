@@ -1,6 +1,3 @@
-// import './profile-info.scss';
-// export { default as ProfileInfo } from './profile-info.hbs?raw';
-
 import Block from "../../tools/Block";
 import "./profile-info.scss";
 import Title from "../title/title";

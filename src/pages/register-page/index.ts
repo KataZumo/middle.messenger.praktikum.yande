@@ -87,3 +87,5 @@ export default class RegisterPage extends Block {
     `;
   }
 }
+
+

@@ -1,6 +1,3 @@
-// import './password-page.scss';
-// export { default as PasswordPage } from './password-page.hbs?raw';
-
 import Block from "../../../tools/Block";
 import "./password-page.scss";
 import Title from "../../../components/title/title";

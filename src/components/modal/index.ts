@@ -1,6 +1,3 @@
-// import './modal.scss';
-// export { default as Modal } from './modal.hbs?raw';
-
 import Block from "../../tools/Block";
 import "./modal.scss";
 

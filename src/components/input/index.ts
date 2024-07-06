@@ -1,6 +1,3 @@
-// import './input.scss';
-// export { default as Input } from './input.hbs?raw';
-
 import Block from "../../tools/Block";
 import "./input.scss";
 

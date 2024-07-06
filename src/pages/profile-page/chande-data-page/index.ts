@@ -1,6 +1,3 @@
-// import './chande-data-page.scss';
-// export { default as ChangePage } from './chande-data-page.hbs?raw';
-
 import "./chande-data-page.scss";
 import Block from "../../../tools/Block";
 import { Button } from "../../../components";

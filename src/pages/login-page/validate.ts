@@ -1,6 +1,5 @@
 export function submitForm(event: Event) {
   event.preventDefault();
-  // Логика для отправки формы
   console.log("Form submitted");
   history.pushState({}, "", "/chat");
   window.dispatchEvent(new PopStateEvent("popstate"));

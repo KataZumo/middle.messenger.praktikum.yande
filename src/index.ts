@@ -1,9 +1,12 @@
+import { error } from "console";
 import ChatPage from "./pages/chat-page";
 import LoginPage from "./pages/login-page";
 import ProfilePage from "./pages/profile-page";
 import ChangeDataPage from "./pages/profile-page/chande-data-page";
 import ChangePasswordPage from "./pages/profile-page/password-page";
 import RegisterPage from "./pages/register-page";
+import ErrorPage from "./pages/error-404";
+import ErrorPage500 from "./pages/error-500";
 
 type PageConstructor = new (props: any) => any;
 
@@ -14,6 +17,8 @@ const pages: Record<string, PageConstructor> = {
   profile: ProfilePage,
   "change-data": ChangeDataPage,
   "change-password": ChangePasswordPage,
+  error404: ErrorPage,
+  error500: ErrorPage500,
 };
 
 function navigate(page: string) {

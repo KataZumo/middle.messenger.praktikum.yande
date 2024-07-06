@@ -15,7 +15,6 @@ class HttpRequest {
     this.baseURL = baseURL;
   }
 
-  // Метод для создания query string из объекта
   static createQueryString(params: Params): string {
     return Object.entries(params)
       .map(
@@ -25,7 +24,7 @@ class HttpRequest {
       .join("&");
   }
 
-  // Основной метод для выполнения запросов
+
   private request<T>(
     method: HttpMethod,
     url: string,
@@ -37,9 +36,8 @@ class HttpRequest {
       xhr.open(method, `${this.baseURL}${url}`);
       xhr.setRequestHeader("Content-Type", "application/json");
 
-      // Установка дополнительных заголовков
       Object.entries(headers).forEach(([key, value]) => {
-        xhr.setRequestHeader(key, value as string); // Явное приведение к типу string
+        xhr.setRequestHeader(key, value as string);
       });
 
       xhr.onload = () => {
@@ -64,7 +62,7 @@ class HttpRequest {
     });
   }
 
-  // Метод для GET-запросов с поддержкой query string
+
   get<T>(
     url: string,
     params: Params = {},
@@ -75,17 +73,17 @@ class HttpRequest {
     return this.request<T>("GET", fullURL, null, headers);
   }
 
-  // Метод для POST-запросов
+
   post<T>(url: string, body: unknown, headers: CustomHeaders = {}): Promise<T> {
     return this.request<T>("POST", url, body, headers);
   }
 
-  // Метод для PUT-запросов
+
   put<T>(url: string, body: unknown, headers: CustomHeaders = {}): Promise<T> {
     return this.request<T>("PUT", url, body, headers);
   }
 
-  // Метод для DELETE-запросов
+
   delete<T>(
     url: string,
     body: unknown = null,
