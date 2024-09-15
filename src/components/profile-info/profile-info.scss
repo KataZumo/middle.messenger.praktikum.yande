@@ -1,32 +1,68 @@
-@import '../../assets/variables';
+$button-bgcolor: #007bff;
+$header-background-color: #343a40;
+$link-color: #007bff;
+$button-color: white;
 
-.profile-info {
-  width: 100%;
+.profile-page {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
 
-  &__name {
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    font-weight: bold;
+  &__content {
+    width: 600px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 2rem;
   }
-
-  &__item {
+  
+  .profile-main-info {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-main-info__item {
+    display: flex;
     justify-content: space-between;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid $divider-line-color;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 
-    &__label {
-      font-weight: bold;
-      text-align: left;
-    }
+  .profile-main-info__label {
+    flex: 0 0 200px; /* Фиксированная ширина для метки */
+    margin-right: 1rem;
+  }
 
-    &__value {
-      text-align: right;
-    }
+  .profile-main-info__value {
+    flex: 1;
+    padding: 0.5rem;
+    border: none; /* Убираем рамку */
+    border-bottom: 1px solid #ccc; /* Добавляем линию снизу */
+    border-radius: 0; /* Убираем закругление */
+    box-sizing: border-box; /* Добавляем box-sizing для корректного расчета размеров */
+  }
+
+  .profile-main-info__name {
+    margin-bottom: 1rem;
+  }
+
+  .profile-main-info__link-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chat-page__profile-link {
+    margin: 0.5rem 0;
   }
 }

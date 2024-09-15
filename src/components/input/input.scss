@@ -1,5 +1,6 @@
 .input {
   height: 26px;
+  position: relative;
 
   &__element {
     border: none;
@@ -12,5 +13,17 @@
     &--align-right {
       text-align: right;
     }
+
+    &--invalid {
+      border: 1px solid red;
+    }
+  }
+
+  &__error-message {
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    top: 100%;
+    left: 0;
   }
 }
